@@ -14,11 +14,12 @@ function Z = softmax(X, eps=1e-8)
     Z  = eX ./ (sum(eX) + eps);
 end
 
-function [x,idx] = softmaxpick(X, eps=1e-8)
-    Z   = softmax(X, eps);
-    oh  = mnrnd(1, Z);
-    idx = find(oh);
-    x   = X(idx, :);
+function [x,z,i] = softmaxpick(X, eps=1e-8)
+    Z  = softmax(X, eps);
+    oh = mnrnd(1,Z);
+    i  = find(oh);
+    x  = X(i,:);
+    z  = Z(i,:);
 end
 
 function Z = softmax_predict(ctx, X)
