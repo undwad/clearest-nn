@@ -1,7 +1,5 @@
 'THE CLEAREST NEURAL NETWORK FRAMEWORK BY UNDWAD'
 
-pkg load statistics;
-
 source('utils.m');
 
 source('layer-dense.m');
